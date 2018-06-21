@@ -1,4 +1,2 @@
-module ValidatesCvr
-  class Railtie < ::Rails::Railtie
-  end
+class ValidatesCvr::Railtie < ::Rails::Railtie
 end
