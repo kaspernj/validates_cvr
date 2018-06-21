@@ -7,5 +7,5 @@ da:
             vat_number:
               bad_format: har et ugyldigt format
               invalid_cvr_number: er et ugyldigt CVR nummer
-              too_long: er for kort
-              too_short: er for langt
+              too_long: er for langt
+              too_short: er for kort
