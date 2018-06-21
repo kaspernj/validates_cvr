@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            vat_number:
+              bad_format: has an invalid format
+              invalid_cvr_number: is an invalid CVR number
+              too_long: is too long
+              too_short: is too short
