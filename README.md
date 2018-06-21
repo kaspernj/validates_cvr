@@ -1,10 +1,18 @@
 # ValidatesCvr
-Short description and motivation.
+
+Validates danish CVR numbers on your models.
 
 ## Usage
-How to use my plugin.
+
+Add to your model:
+```ruby
+class Company < ApplicationRecord
+  validates :vat_number, cvr: true
+end
+```
 
 ## Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby
