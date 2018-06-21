@@ -16,7 +16,9 @@ end
 
 require "bundler/gem_tasks"
 
-if Rails.env.development? || Rails.env.test?
+begin
   require "best_practice_project"
   BestPracticeProject.load_tasks
+rescue LoadError # rubocop:disable Lint/HandleExceptions
+  # Ignore
 end
