@@ -17,6 +17,10 @@ describe CvrValidator do
     expect_valid " 35 40 80 02"
   end
 
+  it "does not allow blanks" do
+    expect_invalid nil
+  end
+
   it "does not allow extra text" do
     expect_invalid "foo 35408002 bar"
   end

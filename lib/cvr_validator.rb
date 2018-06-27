@@ -2,6 +2,8 @@ class CvrValidator < ActiveModel::EachValidator
   MOD_11_WEIGHTS = [2, 7, 6, 5, 4, 3, 2].freeze
 
   def validate_each(record, attribute, value)
+    return record.errors.add(attribute, :blank) if value.blank?
+
     digits = convert_to_digits(value)
 
     record.errors.add(attribute, :too_short) if digits.length < 8
