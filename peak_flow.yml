@@ -1,5 +1,31 @@
-before_script:
-  - cd spec/dummy && bundle exec rake db:schema:load RAILS_ENV=test
-script:
-  - bundle exec rspec
-  - bundle exec rake best_practice_project:run
+builds:
+  rspec:
+    before_script:
+      - cd spec/dummy && bundle exec rake db:schema:load RAILS_ENV=test
+    script:
+      - bundle exec rspec
+    paths:
+      - "lib/**"
+      - "spec/**"
+      - "config/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "validates_cvr.gemspec"
+      - "peak_flow.yml"
+      - "!spec/dummy/tmp/**"
+  best_practice:
+    before_script:
+      - cd spec/dummy && bundle exec rake db:schema:load RAILS_ENV=test
+    script:
+      - bundle exec rake best_practice_project:run
+    paths:
+      - "lib/**"
+      - "spec/**"
+      - "config/**"
+      - "Rakefile"
+      - ".rubocop.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "validates_cvr.gemspec"
+      - "peak_flow.yml"
+      - "!spec/dummy/tmp/**"
